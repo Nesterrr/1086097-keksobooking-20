@@ -113,9 +113,19 @@
     timeIn.value = evt.target.value;
   });
 
+  var reset = document.querySelector('.ad-form__reset');
+
+  var deactivationMap = function () {
+    reset.addEventListener('click', function () {
+      window.form.deactivationForm();
+      window.map.deactivationPin(reset);
+    });
+  };
+
   window.form = {
     activationForm: activationForm,
     deactivationForm: deactivationForm,
+    deactivationMap: deactivationMap,
     fullFieldPAdress: fullFieldPAdress,
     fullCurrentFieldAdress: fullCurrentFieldAdress,
     addressArrival: addressArrival
